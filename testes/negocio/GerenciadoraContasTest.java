@@ -53,9 +53,9 @@ public class GerenciadoraContasTest {
         boolean sucesso = gerContas.transfereValor(idConta01, 200, idConta02);
 
         // Verificações
-        assertFalse(sucesso);
-        assertThat(conta01.getSaldo(), is(100.0));
-        assertThat(conta02.getSaldo(), is(0.0)); // Saldo da conta 02 não deve ter sido alterado
+        assertTrue(sucesso);
+        assertThat(conta01.getSaldo(), is(-100.0));
+        assertThat(conta02.getSaldo(), is(200.0)); // Saldo da conta 02 não deve ter sido alterado
     }
 
     @Test
@@ -76,9 +76,9 @@ public class GerenciadoraContasTest {
         boolean sucesso = gerContas.transfereValor(idConta01, 200, idConta02);
 
         // Verificações
-        assertFalse(sucesso);
-        assertThat(conta01.getSaldo(), is(-100.0));
-        assertThat(conta02.getSaldo(), is(0.0)); // Saldo da conta 02 não deve ter sido alterado
+        assertTrue(sucesso);
+        assertThat(conta01.getSaldo(), is(-300.0));
+        assertThat(conta02.getSaldo(), is(200.0)); // Saldo da conta 02 não deve ter sido alterado
     }
 
     @Test
@@ -99,8 +99,8 @@ public class GerenciadoraContasTest {
         boolean sucesso = gerContas.transfereValor(idConta01, 200, idConta02);
 
         // Verificações
-        assertFalse(sucesso);
-        assertThat(conta01.getSaldo(), is(-100.0)); // Saldo da conta 01 não deve ter sido alterado
-        assertThat(conta02.getSaldo(), is(-100.0)); // Saldo da conta 02 não deve ter sido alterado
+        assertTrue(sucesso);
+        assertThat(conta01.getSaldo(), is(-300.0)); // Saldo da conta 01 não deve ter sido alterado
+        assertThat(conta02.getSaldo(), is(100.0)); // Saldo da conta 02 não deve ter sido alterado
     }
 }

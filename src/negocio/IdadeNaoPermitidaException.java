@@ -2,7 +2,7 @@ package negocio;
 
 
 /**
- * Exceção a ser lançada quando a idade de um possível novo cliente não for aceita.
+ * Exceï¿½ï¿½o a ser lanï¿½ada quando a idade de um possï¿½vel novo cliente nï¿½o for aceita.
  * 
  
  */
